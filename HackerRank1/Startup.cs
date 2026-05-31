@@ -63,6 +63,15 @@ namespace LibraryService.WebAPI
             // 4. Configurar Autorizacion
             services.AddAuthorization();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Devcors", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5173")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
 
             // Add support for Dependency Injection for internal services (BooksService and LibrariesService)
             services.AddTransient<ILibrariesService,  LibrariesService>();
@@ -104,6 +113,7 @@ namespace LibraryService.WebAPI
 
 
             app.UseRouting();
+            app.UseCors("Devcors");
 
             // Agregar los metodos de Auth al Middleware Pipeline.
             app.UseAuthentication();
