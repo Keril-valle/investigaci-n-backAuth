@@ -67,9 +67,10 @@ namespace LibraryService.WebAPI
             {
                 options.AddPolicy("Devcors", policy =>
                 {
-                    policy.WithOrigins("http://localhost:5173")
+                    policy.WithOrigins("https://investigacin-front-keril.netlify.app")
                           .AllowAnyMethod()
-                          .AllowAnyHeader();
+                          .AllowAnyHeader()
+                          .AllowCredentials();
                 });
             });
 
