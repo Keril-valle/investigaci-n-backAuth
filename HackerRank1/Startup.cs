@@ -69,10 +69,10 @@ namespace LibraryService.WebAPI
                 {
                     policy.WithOrigins(
                                 "https://front-investigacion.netlify.app")
-                                
+
                           .AllowAnyMethod()
-                          .AllowAnyHeader()
-                          .AllowCredentials();
+                          .AllowAnyHeader();
+                      
                     
                 });
             });
