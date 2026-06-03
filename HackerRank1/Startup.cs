@@ -67,10 +67,13 @@ namespace LibraryService.WebAPI
             {
                 options.AddPolicy("Devcors", policy =>
                 {
-                    policy.WithOrigins("https://investigacin-front-keril.netlify.app")
+                    policy.WithOrigins(
+                                "https://front-investigacion.netlify.app")
+
                           .AllowAnyMethod()
-                          .AllowAnyHeader()
-                          .AllowCredentials();
+                          .AllowAnyHeader();
+                      
+                    
                 });
             });
 
