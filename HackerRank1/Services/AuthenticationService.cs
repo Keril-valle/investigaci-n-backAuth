@@ -16,7 +16,7 @@ public class AuthenticationService : IAuthenticationService
         {
             return new User() { Id = 1, Email = email, Password = password, Role = "admin" };
         }
-        if (email == "U" && password == "1234")
+        else
         {
             return new User() { Id = 2, Email = email, Password = password, Role = "usuario" };
         }
